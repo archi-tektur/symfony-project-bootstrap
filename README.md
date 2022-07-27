@@ -10,6 +10,10 @@ effective work environment. Sometimes people were just following Symfony Docs - 
 however they are not following the [12-Factor-App](https://12factor.net) recommendations. Also, the way how Symfony
 recommends using Docker is far from perfect, hence I created this bootstrap.
 
+## PHP & Symfony
+This project is using PHP in version __8.1.*__ and Symfony framework with version __^6.1__. In the future, I plan to 
+update this repository to match next PHP and Symfony versions.
+
 ## Required tools
 
 Before we start, let's make sure that our host device has required programs. We will use `docker` and `docker compose`
