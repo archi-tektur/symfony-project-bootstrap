@@ -1,7 +1,6 @@
 monolog:
     channels:
-        - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
-
+        - deprecation
 when@dev:
     monolog:
         handlers:
@@ -10,19 +9,10 @@ when@dev:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
                 channels: ["!event"]
-            # uncomment to get logging in your browser
-            # you may have to allow bigger header sizes in your Web server configuration
-            #firephp:
-            #    type: firephp
-            #    level: info
-            #chromephp:
-            #    type: chromephp
-            #    level: info
             console:
                 type: console
                 process_psr_3_messages: false
                 channels: ["!event", "!doctrine", "!console"]
-
 when@test:
     monolog:
         handlers:
@@ -36,7 +26,6 @@ when@test:
                 type: stream
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
-
 when@prod:
     monolog:
         handlers:
@@ -45,7 +34,7 @@ when@prod:
                 action_level: error
                 handler: nested
                 excluded_http_codes: [404, 405]
-                buffer_size: 500 # How many messages should be saved? Prevent memory leaks
+                buffer_size: 500
             nested:
                 type: stream
                 path: php://stderr
