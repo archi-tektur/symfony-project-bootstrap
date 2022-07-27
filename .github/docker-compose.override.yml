@@ -1,0 +1,10 @@
+services:
+  app:
+    environment:
+      PHP_OPCACHE_ENABLE: "false"
+  mariadb:
+    ports:
+      - mode: host
+        target: 3306
+        published: 33306
+        protocol: tcp

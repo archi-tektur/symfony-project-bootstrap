@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@damlys/standard-version-updater-docker": "^1.0.0",
+    "husky": "^7.0.4",
+    "standard-version": "^9.3.2"
+  },
+  "scripts": {
+    "prepare": "cd .. && husky install ./.semver/husky",
+    "bump-version": "standard-version --skip.changelog --skip.commit --skip.tag",
+    "release": "standard-version"
+  }
+}
