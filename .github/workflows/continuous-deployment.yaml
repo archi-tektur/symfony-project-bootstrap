@@ -61,7 +61,7 @@ jobs:
 #      - name: Run code lint check
 #        run: docker-compose run -T --no-deps --rm app composer run-script lint-check
       - name: Run unit tests
-        run: docker-compose run -T --no-deps --rm app composer test
+        run: docker-compose run -T --rm app composer test
 
       - name: Run Docker containers
         run: docker-compose up --detach
