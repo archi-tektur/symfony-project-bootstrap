@@ -64,7 +64,7 @@ jobs:
 #      - name: Run code lint check
 #        run: docker-compose run -T --no-deps --rm app composer run-script lint-check
       - name: Run unit tests
-        run: docker-compose run -T --rm app composer test
+        run: docker-compose exec app composer test
 #      - name: Run HTTP API tests
 #        run: docker-compose exec -T app composer run-script http-api-tests
       - name: Destroy Docker containers
