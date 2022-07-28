@@ -47,6 +47,3 @@ npm-debug.log
 #############################
 ### Application
 #############################
-
-.database
-!/.database/.gitkeep

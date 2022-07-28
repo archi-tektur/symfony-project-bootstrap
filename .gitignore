@@ -46,3 +46,5 @@ app/var
 
 /app/logs/*
 !/app/logs/.gitkeep
+
+/app/.phpunit.result.cache
