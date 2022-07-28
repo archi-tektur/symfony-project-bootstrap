@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
     "type": "project",
     "license": "proprietary",
@@ -66,9 +66,7 @@
         "test": "php bin/phpunit --do-not-cache-result",
         "codesniffer": "./vendor/bin/php-cs-fixer fix",
         "phpstan": "./vendor/bin/phpstan analyse",
-        "build": {
-
-        }
+        "build": {}
     },
     "conflict": {
         "symfony/symfony": "*"
