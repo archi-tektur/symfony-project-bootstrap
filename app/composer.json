@@ -63,7 +63,7 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "test": "php bin/phpunit",
+        "test": "php bin/phpunit --do-not-cache-result",
         "codesniffer": "./vendor/bin/php-cs-fixer fix",
         "phpstan": "./vendor/bin/phpstan analyse",
         "build": {
