@@ -18,7 +18,3 @@ services:
       MYSQL_DATABASE: "symfony-bootstrap"
       MYSQL_USER: "user"
       MYSQL_PASSWORD: "password"
-    volumes:
-      - type: bind
-        source: .database
-        target: /var/lib/mysql

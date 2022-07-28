@@ -41,6 +41,10 @@ services:
         target: 3306
         published: 3306
         protocol: tcp
+    volumes:
+      - type: bind
+        source: .database
+        target: /var/lib/mysql
 volumes:
   composer_cache:
     driver: local
