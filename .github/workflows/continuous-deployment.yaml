@@ -49,6 +49,9 @@ jobs:
         run: ln -s ./.github/docker-compose.override.yml .
       - name: Build Docker images
         run: docker-compose build
+
+      - name: Run Docker containers
+        run: docker-compose up --detach
 #      - name: Run Docker vulnerability scanning
 #        run: docker scan --severity=high "$(docker-compose config --format=json | jq --join-output .services.app.image)"
 #        continue-on-error: true
@@ -61,12 +64,7 @@ jobs:
 #      - name: Run code lint check
 #        run: docker-compose run -T --no-deps --rm app composer run-script lint-check
       - name: Run unit tests
-        run: docker-compose run -T --no-deps --rm app composer test
-
-      - name: Run Docker containers
-        run: docker-compose up --detach
-      - name: Wait 10s
-        run: sleep 10
+        run: docker-compose exec -T app composer test
 #      - name: Run HTTP API tests
 #        run: docker-compose exec -T app composer run-script http-api-tests
       - name: Destroy Docker containers

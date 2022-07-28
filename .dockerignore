@@ -43,10 +43,3 @@ npm-debug.log
 ### PHP
 #############################
 /app/vendor
-
-#############################
-### Application
-#############################
-
-.database
-!/.database/.gitkeep
