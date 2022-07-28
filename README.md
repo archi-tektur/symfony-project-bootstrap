@@ -1,6 +1,6 @@
 # Symfony Bootstrap
 
-Modern Symfony (PHP) project template created in order to follow 12-factor-app principles. Great starter for small, 
+Modern Symfony (PHP) project template created in order to follow 12-factor-app principles. Great starter for small,
 medium and large projects.
 
 ## Motivation
@@ -11,7 +11,8 @@ however they are not following the [12-Factor-App](https://12factor.net) recomme
 recommends using Docker is far from perfect, hence I created this bootstrap.
 
 ## PHP & Symfony
-This project is using PHP in version __8.1.*__ and Symfony framework with version __^6.1__. In the future, I plan to 
+
+This project is using PHP in version **8.1.\*** and Symfony framework with version **^6.1**. In the future, I plan to
 update this repository to match next PHP and Symfony versions.
 
 ## Required tools
@@ -36,21 +37,27 @@ docker compose version
 
 First things first you have to copy the development environment template. It' located in `.devcontainer`, I'd reccomend
 to leave it there and create a symbolic link.
+
 ```shell
 ln -s ./.devcontainer/docker-compose.override.yml .
 ```
 
 Now we'll use `docker` to build our image locally, with local architecture:
+
 ```shell
 docker compose build
 ```
+
 It may take few seconds, when it's completed proceed with running the container:
+
 ```shell
 docker-compose up --detach
 ```
-Remember that you have installed the vendors in an image, however while creating container you've replaced built app 
+
+Remember that you have installed the vendors in an image, however while creating container you've replaced built app
 folder with empty one (repository has no `vendor` folder intentionally). So, we have to proceed once again with app
 configuration:
+
 ```shell
 docker-compose exec app bash -ce "
     composer install
@@ -59,10 +66,11 @@ docker-compose exec app bash -ce "
   "
 ```
 
-Now you're all set, you can visit the [localhost with port 38080](http://localhost:38080), you should 
+Now you're all set, you can visit the [localhost with port 38080](http://localhost:38080), you should
 see the Symfony default application web page.
 
 If for some reason you'd like to enter the container, use the command below.
+
 ```shell
 docker-compose exec app bash
 ```
@@ -70,6 +78,7 @@ docker-compose exec app bash
 ## Removing local environment
 
 You can remove local environment using the command below:
+
 ```shell
 docker-compose down --remove-orphans
 ```
@@ -82,16 +91,16 @@ This section will be expanded soon.
 
 ### Custom PHP image
 
-In the main Dockerfile I used [caddy-php](https://github.com/archi-tektur/caddy-php-image): my own high-performance PHP 
+In the main Dockerfile I used [caddy-php](https://github.com/archi-tektur/caddy-php-image): my own high-performance PHP
 image that uses Caddy as a runner and php-fpm as a daemon.
 
 ```dockerfile
 FROM ghcr.io/archi-tektur/caddy-php:1.0.3 AS app
 ```
 
-You're free to change it to any image and configuration you'd like. You may read 
+You're free to change it to any image and configuration you'd like. You may read
 [here](https://github.com/archi-tektur/caddy-php-image/README.md) what's bundled inside my image and create your own
-with my approach as a guidelines. 
+with my approach as a guidelines.
 
 ### Application logs
 
@@ -101,8 +110,8 @@ logged with PSR `LoggerInterface` and `monolog` package.
 
 ### Testing
 
-Use the command below to run tests. Initially this project contains 
-[one test](https://github.com/archi-tektur/symfony-bootstrap/app/tests/NullTest.php) with one assertion 
+Use the command below to run tests. Initially this project contains
+[one test](https://github.com/archi-tektur/symfony-bootstrap/app/tests/NullTest.php) with one assertion
 (NullTest pattern).
 
 ```
