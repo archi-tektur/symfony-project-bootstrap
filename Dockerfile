@@ -3,6 +3,8 @@ FROM ghcr.io/archi-tektur/caddy-php:1.0.3 AS app
 ENV VERSION="1.0.0"
 
 COPY ./app /app
+COPY ./.database /.database
+
 RUN composer install
 
 RUN composer build \
