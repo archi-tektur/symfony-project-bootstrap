@@ -4,7 +4,7 @@ ENV VERSION="1.0.0"
 
 COPY ./app /app
 
-RUN touch .database
+RUN mkdir .database
 
 RUN composer install
 
