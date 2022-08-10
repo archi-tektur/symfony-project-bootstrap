@@ -12,7 +12,7 @@ recommends using Docker is far from perfect, hence I created this bootstrap.
 
 ## PHP & Symfony
 
-This project is using PHP in version **8.1.\*** and Symfony framework with version **^6.1**. In the future, I plan to
+This project is using PHP in version **8.1.\** and Symfony framework with version **^6.1**. In the future, I plan to
 update this repository to match next PHP and Symfony versions.
 
 ## Required tools
