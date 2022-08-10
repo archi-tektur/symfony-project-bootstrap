@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: app
-    image: ghcr.io/archi-tektur/symfony-bootstrap:app-${VERSION:-1.0.0}
+    image: ghcr.io/archi-tektur/symfony-bootstrap:app-${VERSION:-1.0.3}
     environment:
       HTTP_API_TESTS_ENTRYPOINT: "http://app:8080"
       # Application
