@@ -69,7 +69,7 @@
         "run-lint-check": "./vendor/bin/php-cs-fixer fix --dry-run --using-cache no",
         "run-lint-fix": "./vendor/bin/php-cs-fixer fix",
         "run-phpstan-analysis": "./vendor/bin/phpstan analyse",
-        "run-all-tests":[
+        "run-all-tests": [
             "@run-unit-tests",
             "@run-functional-tests"
         ],

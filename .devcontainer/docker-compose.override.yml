@@ -23,10 +23,7 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
     ports:
-      - mode: host
-        target: 8080
-        published: 38080
-        protocol: tcp
+      - - "38080:8080"
     volumes:
       - type: volume
         source: composer_cache
@@ -37,10 +34,7 @@ services:
     working_dir: /app
   mariadb:
     ports:
-      - mode: host
-        target: 3306
-        published: 3306
-        protocol: tcp
+      - "33306:3306"
     volumes:
       - type: bind
         source: .database
