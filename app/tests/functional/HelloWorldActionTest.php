@@ -4,29 +4,18 @@ declare(strict_types=1);
 
 namespace App\Tests\functional;
 
-use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpClient\HttpClient;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
+use App\Tests\functional\helper\HttpClientAwareTestCase;
 
 /**
+ * @covers \App\Controller\HelloWorldAction
+ *
  * @internal
- * @coversNothing
  */
-final class HelloWorldActionTest extends TestCase
+final class HelloWorldActionTest extends HttpClientAwareTestCase
 {
-    private HttpClientInterface $httpClient;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->httpClient = HttpClient::create();
-    }
-
     public function testHelloWorldResponse(): void
     {
-        $response = $this->httpClient->request('GET', 'http://app:8080/api/hello-world');
-
+        $response = $this->httpClient->request('GET', '/api/hello-world');
         $data = $response->toArray();
 
         self::assertArrayHasKey('message', $data);

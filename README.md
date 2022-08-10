@@ -10,10 +10,10 @@ effective work environment. Sometimes people were just following Symfony Docs - 
 however they are not following the [12-Factor-App](https://12factor.net) recommendations. Also, the way how Symfony
 recommends using Docker is far from perfect, hence I created this bootstrap.
 
-## PHP & Symfony
+## PHP, Symfony and the database
 
-This project is using PHP in version **8.1.\*** and Symfony framework with version **^6.1**. In the future, I plan to
-update this repository to match next PHP and Symfony versions.
+This project is using PHP in version **8.1.\** and Symfony framework with version **^6.1**. In the future, I plan to
+update this repository to match next PHP and Symfony versions. Also, the MariaDB 10.6 is used.
 
 ## Required tools
 
@@ -69,6 +69,14 @@ docker-compose exec app bash -ce "
 Now you're all set, you can visit the [localhost with port 38080](http://localhost:38080), you should
 see the Symfony default application web page.
 
+Also, a GET endpoint [/api/hello-world](http://localhost:38080/api/hello-world) was added to configure and show the functional
+test environment. It will always return static data:
+```json
+{
+  "message": "Hello, world"
+}
+```
+
 If for some reason you'd like to enter the container, use the command below.
 
 ```shell
@@ -110,13 +118,27 @@ logged with PSR `LoggerInterface` and `monolog` package.
 
 ### Testing
 
-Use the command below to run tests. Initially this project contains
+Modern web applications must be well tested. To keep things simple I prepared ready to use suite for unit and functional
+tests.
+
+#### Unit
+Use the command below to run unit tests. Initially this project contains
 [one test](https://github.com/archi-tektur/symfony-bootstrap/app/tests/NullTest.php) with one assertion
 (NullTest pattern).
 
 ```
-docker compose exec app composer test
+docker compose exec app composer run-unit-tests
 ```
+
+#### Functional
+
+Use the command below to run functional tests:
+
+```
+docker compose exec app composer run-functional-tests
+```
+
+Functional test is testing here the hello-world endpoint.
 
 ## Troubleshooting
 

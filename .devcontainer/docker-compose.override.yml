@@ -23,7 +23,7 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
     ports:
-      - - "38080:8080"
+      - "38080:8080"
     volumes:
       - type: volume
         source: composer_cache

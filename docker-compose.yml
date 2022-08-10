@@ -6,7 +6,7 @@ services:
       target: app
     image: ghcr.io/archi-tektur/symfony-bootstrap:app-${VERSION:-1.0.3}
     environment:
-      HTTP_API_TESTS_ENTRYPOINT: "http://app:8080"
+      APP_URL: "http://app:8080"
       # Application
       APP_ENV: "dev"
       APP_SECRET: "a9806d99cd5c1503d8af30c963c9411f"
