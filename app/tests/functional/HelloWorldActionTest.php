@@ -25,7 +25,7 @@ final class HelloWorldActionTest extends TestCase
 
     public function testHelloWorldResponse(): void
     {
-        $response = $this->httpClient->request('GET', 'http://localhost:8080/api/hello-world');
+        $response = $this->httpClient->request('GET', 'http://app:8080/api/hello-world');
 
         $data = $response->toArray();
 
