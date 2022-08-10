@@ -37,7 +37,16 @@ npm-debug.log
 #############################
 app/vendor
 app/var
-/app/logs/*
-!/app/logs/.gitkeep
+
+#############################
+### Tools
+#############################
 /app/.phpunit.result.cache
+/app/.php-cs-fixer.cache
+
+#############################
+### Application
+#############################
+/app/log/*
 !app/var/log/.gitkeep
+

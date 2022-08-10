@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Kernel;
-use Symfony\Component\ErrorHandler\Debug;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
