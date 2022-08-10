@@ -6,6 +6,11 @@ namespace App\Tests\functional;
 
 use App\Tests\functional\helper\HttpClientAwareTestCase;
 
+/**
+ * @covers \App\Controller\HelloWorldAction
+ *
+ * @internal
+ */
 final class HelloWorldActionTest extends HttpClientAwareTestCase
 {
     public function testHelloWorldResponse(): void
