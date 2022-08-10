@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
     "type": "project",
     "license": "proprietary",
@@ -73,8 +73,7 @@
             "@run-unit-tests",
             "@run-functional-tests"
         ],
-        "build": {
-        }
+        "build": {}
     },
     "conflict": {
         "symfony/symfony": "*"
