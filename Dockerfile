@@ -1,6 +1,6 @@
 FROM ghcr.io/archi-tektur/caddy-php:1.1.0 AS app
 
-ENV VERSION="1.0.3"
+ENV VERSION="1.1.0"
 
 # Copy all app, because Symfony requires bin/console to be working on install stage
 COPY ./app /app
