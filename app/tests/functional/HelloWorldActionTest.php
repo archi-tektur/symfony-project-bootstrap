@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace App\Tests\functional;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpClient\CurlHttpClient;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
  * @internal
@@ -13,13 +14,13 @@ use Symfony\Component\HttpClient\CurlHttpClient;
  */
 final class HelloWorldActionTest extends TestCase
 {
-    private CurlHttpClient $httpClient;
+    private HttpClientInterface $httpClient;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->httpClient = new CurlHttpClient();
+        $this->httpClient = HttpClient::create();
     }
 
     public function testHelloWorldResponse(): void

@@ -52,20 +52,13 @@ jobs:
 
       - name: Run Docker containers
         run: docker-compose up --detach
-#      - name: Run Docker vulnerability scanning
-#        run: docker scan --severity=high "$(docker-compose config --format=json | jq --join-output .services.app.image)"
-#        continue-on-error: true
-
-#      - name: Run Composer vulnerability scanning
-#        run: docker-compose run -T --no-deps --rm app composer run-script vulnerability-scan
-#        continue-on-error: true
-#      - name: Run code format check
-#        run: docker-compose run -T --no-deps --rm app composer run-script format-check
-#      - name: Run code lint check
-#        run: docker-compose run -T --no-deps --rm app composer run-script lint-check
+      - name: Run code lint check
+        run: docker-compose exec -T app composer run-lint-check
+      - name: Run code static analysis
+        run: docker-compose exec -T app composer run-phpstan-analysis
       - name: Run unit tests
         run: docker-compose exec -T app composer run-unit-tests
-      - name: Run HTTP API tests
+      - name: Run functional tests
         run: docker-compose exec -T app composer run-functional-tests
       - name: Destroy Docker containers
         run: docker-compose down --volumes --remove-orphans

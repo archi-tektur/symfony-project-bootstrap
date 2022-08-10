@@ -64,9 +64,9 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "run-unit-tests": "php bin/phpunit --do-not-cache-result",
-        "run-functional-tests": "php bin/phpunit --do-not-cache-result",
-        "run-lint-check": "./vendor/bin/php-cs-fixer fix",
+        "run-unit-tests": "php bin/phpunit --do-not-cache-result --testsuite unit",
+        "run-functional-tests": "php bin/phpunit --do-not-cache-result --testsuite functional",
+        "run-lint-check": "./vendor/bin/php-cs-fixer fix --dry-run",
         "run-lint-fix": "./vendor/bin/php-cs-fixer fix",
         "run-phpstan-analysis": "./vendor/bin/phpstan analyse",
         "run-all-tests":[
