@@ -1,5 +1,5 @@
 {
-    "version": "1.0.3",
+    "version": "1.0.2",
     "description": "",
     "type": "project",
     "license": "proprietary",
@@ -17,6 +17,7 @@
         "symfony/dotenv": "6.1.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.1.*",
+        "symfony/http-client": "6.1.*",
         "symfony/monolog-bundle": "^3.8",
         "symfony/runtime": "6.1.*",
         "symfony/yaml": "6.1.*"
@@ -63,10 +64,17 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "test": "php bin/phpunit --do-not-cache-result",
-        "codesniffer": "./vendor/bin/php-cs-fixer fix",
-        "phpstan": "./vendor/bin/phpstan analyse",
-        "build": {}
+        "run-unit-tests": "php bin/phpunit --do-not-cache-result --testsuite unit",
+        "run-functional-tests": "php bin/phpunit --do-not-cache-result --testsuite functional",
+        "run-lint-check": "./vendor/bin/php-cs-fixer fix --dry-run --using-cache no",
+        "run-lint-fix": "./vendor/bin/php-cs-fixer fix",
+        "run-phpstan-analysis": "./vendor/bin/phpstan analyse",
+        "run-all-tests": [
+            "@run-unit-tests",
+            "@run-functional-tests"
+        ],
+        "build": {
+        }
     },
     "conflict": {
         "symfony/symfony": "*"
