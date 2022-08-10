@@ -10,10 +10,10 @@ effective work environment. Sometimes people were just following Symfony Docs - 
 however they are not following the [12-Factor-App](https://12factor.net) recommendations. Also, the way how Symfony
 recommends using Docker is far from perfect, hence I created this bootstrap.
 
-## PHP & Symfony
+## PHP, Symfony and the database
 
 This project is using PHP in version **8.1.\** and Symfony framework with version **^6.1**. In the future, I plan to
-update this repository to match next PHP and Symfony versions.
+update this repository to match next PHP and Symfony versions. Also, the MariaDB 10.6 is used.
 
 ## Required tools
 
