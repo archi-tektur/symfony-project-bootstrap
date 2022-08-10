@@ -118,6 +118,9 @@ logged with PSR `LoggerInterface` and `monolog` package.
 
 ### Testing
 
+Modern web applications must be well tested. To keep things simple I prepared ready to use suite for unit and functional
+tests.
+
 #### Unit
 Use the command below to run unit tests. Initially this project contains
 [one test](https://github.com/archi-tektur/symfony-bootstrap/app/tests/NullTest.php) with one assertion
