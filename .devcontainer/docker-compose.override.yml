@@ -35,10 +35,6 @@ services:
   mariadb:
     ports:
       - "33306:3306"
-    volumes:
-      - type: bind
-        source: .database
-        target: /var/lib/mysql
 volumes:
   composer_cache:
     driver: local
