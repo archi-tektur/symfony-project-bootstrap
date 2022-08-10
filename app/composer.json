@@ -73,8 +73,7 @@
             "@run-unit-tests",
             "@run-functional-tests"
         ],
-        "build": {
-        }
+        "build": {}
     },
     "conflict": {
         "symfony/symfony": "*"
