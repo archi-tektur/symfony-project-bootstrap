@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 1.0.3 (2022-08-10)
 
+
+### Bug Fixes
+
+* Application port open on GH Actions ([#4](https://github.com/archi-tektur/symfony-bootstrap/issues/4)) ([8ca581c](https://github.com/archi-tektur/symfony-bootstrap/commit/8ca581c8ff7914c4c2b1ddbe58847267633320bc))
+
+### 1.0.3 (2022-08-10)
+
 ### 1.0.3 (2022-07-28)
 
 
