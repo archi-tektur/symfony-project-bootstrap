@@ -60,7 +60,6 @@ configuration:
 ```shell
 docker-compose exec app bash -ce "
     composer install
-    composer build
     chown -R $(id -u):$(id -g) .
   "
 ```

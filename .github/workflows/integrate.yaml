@@ -2,6 +2,9 @@ name: continuous-deployment
 on:
   pull_request:
     paths: [ "**", "!**.md" ]
+env:
+  PACKAGE_NAME: "ghcr.io/archi-tektur/symfony-project-bootstrap"
+  PACKAGE_VERSION: "2.0.0"
 jobs:
   integrate:
     runs-on: ubuntu-22.04

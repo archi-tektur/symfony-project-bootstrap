@@ -22,6 +22,3 @@ app/var
 # Code quality tools cache files
 /app/.phpunit.result.cache
 /app/.php-cs-fixer.cache
-
-# Front-end bundles
-app/public/bundles
