@@ -17,7 +17,7 @@ abstract class HttpClientAwareTestCase extends TestCase
         parent::setUp();
 
         $this->httpClient = HttpClient::create([
-            'base_uri' => 'http://localhost'
+            'base_uri' => 'http://localhost',
         ]);
     }
 }
