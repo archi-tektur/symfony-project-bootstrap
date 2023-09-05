@@ -50,7 +50,7 @@ docker compose build
 It may take few seconds, when it's completed proceed with running the container:
 
 ```shell
-docker-compose up --detach
+docker compose up --detach
 ```
 
 Remember that you have installed the vendors in an image, however while creating container you've replaced built app
@@ -58,7 +58,7 @@ folder with empty one (repository has no `vendor` folder intentionally). So, we 
 configuration:
 
 ```shell
-docker-compose exec app bash -ce "
+docker compose exec app bash -ce "
     composer install
     chown -R $(id -u):$(id -g) .
   "
@@ -78,7 +78,7 @@ test environment. It will always return static data:
 If for some reason you'd like to enter the container, use the command below.
 
 ```shell
-docker-compose exec app bash
+docker compose exec app bash
 ```
 
 ## Removing local environment
@@ -86,7 +86,7 @@ docker-compose exec app bash
 You can remove local environment using the command below:
 
 ```shell
-docker-compose down --remove-orphans
+docker compose down --remove-orphans
 ```
 
 ## Assumptions
