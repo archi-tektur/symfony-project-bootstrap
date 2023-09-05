@@ -1,4 +1,4 @@
-name: continuous-deployment
+name: integrate
 on:
   pull_request:
     paths: [ "**", "!**.md" ]
