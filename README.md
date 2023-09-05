@@ -31,15 +31,14 @@ docker compose version
 > Docker Compose version v2.6.1
 ```
 
-## How to adapt
-
 ## Building environment for development
 
 First things first you have to copy the development environment template. It' located in `.devcontainer`, I'd reccomend
 to leave it there and create a symbolic link.
 
 ```shell
-ln -s ./.devcontainer/docker-compose.override.yml .
+ln -s ./etc/envs/compose.dev.yaml .
+mv compose.dev.yaml compose.override.yaml
 ```
 
 Now we'll use `docker` to build our image locally, with local architecture:
@@ -51,7 +50,7 @@ docker compose build
 It may take few seconds, when it's completed proceed with running the container:
 
 ```shell
-docker-compose up --detach
+docker compose up --detach
 ```
 
 Remember that you have installed the vendors in an image, however while creating container you've replaced built app
@@ -59,17 +58,16 @@ folder with empty one (repository has no `vendor` folder intentionally). So, we 
 configuration:
 
 ```shell
-docker-compose exec app bash -ce "
+docker compose exec app bash -ce "
     composer install
-    composer build
     chown -R $(id -u):$(id -g) .
   "
 ```
 
-Now you're all set, you can visit the [localhost with port 38080](http://localhost:38080), you should
+Now you're all set, you can visit the [localhost with port 80](http://localhost), you should
 see the Symfony default application web page.
 
-Also, a GET endpoint [/api/hello-world](http://localhost:38080/api/hello-world) was added to configure and show the functional
+Also, a GET endpoint [/api/hello-world](http://localhost/api/hello-world) was added to configure and show the functional
 test environment. It will always return static data:
 ```json
 {
@@ -80,7 +78,7 @@ test environment. It will always return static data:
 If for some reason you'd like to enter the container, use the command below.
 
 ```shell
-docker-compose exec app bash
+docker compose exec app bash
 ```
 
 ## Removing local environment
@@ -88,12 +86,8 @@ docker-compose exec app bash
 You can remove local environment using the command below:
 
 ```shell
-docker-compose down --remove-orphans
+docker compose down --remove-orphans
 ```
-
-## Running service for production use
-
-This section will be expanded soon.
 
 ## Assumptions
 
@@ -103,7 +97,7 @@ In the main Dockerfile I used [caddy-php](https://github.com/archi-tektur/caddy-
 image that uses Caddy as a runner and php-fpm as a daemon.
 
 ```dockerfile
-FROM ghcr.io/archi-tektur/caddy-php:1.0.3 AS app
+FROM ghcr.io/archi-tektur/caddy-php:2.2.0 AS app
 ```
 
 You're free to change it to any image and configuration you'd like. You may read
@@ -143,5 +137,3 @@ Functional test is testing here the hello-world endpoint.
 ## Troubleshooting
 
 This section will be expanded as first problem will come.
-
-## Inspiration

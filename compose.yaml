@@ -4,10 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: app
-    image: ghcr.io/archi-tektur/symfony-bootstrap:app-${VERSION:-1.0.4}
+    image: ghcr.io/archi-tektur/symfony-project-bootstrap:app-${VERSION:-2.0.0}
     environment:
-      APP_URL: "http://app:8080"
-      # Application
       APP_ENV: "dev"
       APP_SECRET: "a9806d99cd5c1503d8af30c963c9411f"
       DATABASE_URL: "mysql://user:password@mariadb:3306/symfony-bootstrap"

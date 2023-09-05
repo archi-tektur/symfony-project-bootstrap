@@ -10,7 +10,13 @@ $finder
 
 $config = new PhpCsFixer\Config();
 $config
-    ->setRules(['@PhpCsFixer' => true])
+    ->setRules([
+        '@PhpCsFixer' => true,
+        'declare_strict_types' => true,
+        'ordered_class_elements' => false,
+        'php_unit_test_class_requires_covers' => false,
+        'php_unit_internal_class' => false,
+    ])
     ->setFinder($finder);
 
 return $config;

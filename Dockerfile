@@ -1,21 +1,17 @@
-FROM ghcr.io/archi-tektur/caddy-php:1.1.0 AS app
+FROM ghcr.io/archi-tektur/caddy-php:2.2.0 AS app
 
-ENV VERSION="1.0.4"
+ENV VERSION="2.0.0"
 
-# Copy all app, because Symfony requires bin/console to be working on install stage
 COPY ./app /app
 RUN composer install
 
-# Run user-defined build tasks
-RUN composer build
-
 RUN chmod --recursive a+r /app \
 && chmod --recursive a+x /app/bin/* \
-&& chown --recursive www-data:www-data /app/var/log
+&& chown --recursive www-data:www-data /app/var/log \
+&& chmod --recursive a+w /app/var/log
 
-# Add write privileges for logs, cache and vendors
-RUN chmod --recursive a+w /app/var/log \
-&& chmod --recursive a+w /app/var/cache \
-&& chmod --recursive a+w /app/vendor
+ENV APP_ENV="prod"
 
 USER www-data:www-data
+
+HEALTHCHECK CMD curl --fail http://localhost || exit 1

@@ -4,14 +4,14 @@ services:
     environment:
       PHP_OPCACHE_ENABLE: "false"
       # Logs
-      CADDY_LOG_OUTPUT: "file /app/var/log/caddy.log"
+      CADDY_LOG_OUTPUT: "file /var/log/caddy.log"
       CADDY_LOG_LEVEL: "INFO"
-      FPM_ACCESS_LOG: "/app/var/log/php-fpm.access.log"
-      FPM_ERROR_LOG: "/app/var/log/php-fpm.error.log"
+      FPM_ACCESS_LOG: "/var/log/php-fpm.access.log"
+      FPM_ERROR_LOG: "/var/log/php-fpm.error.log"
       FPM_LOG_LEVEL: "notice"
-      PHP_ERROR_LOG: "/app/var/log/php.error.log"
+      PHP_ERROR_LOG: "/var/log/php.error.log"
       PHP_LOG_LEVEL: "E_ALL"
-      XDEBUG_OUTPUT_DIR: "/app/var/log"
+      XDEBUG_OUTPUT_DIR: "/var/log"
       # Debugging
       PHP_IDE_CONFIG: "serverName=docker"
       XDEBUG_MODE: "debug"
@@ -23,18 +23,14 @@ services:
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
     ports:
-      - "38080:8080"
+      - "80:80"
     volumes:
-      - type: volume
-        source: composer_cache
-        target: /root/.composer/cache
-      - type: bind
-        source: ./app
-        target: /app
+      - { type: volume, source: composer_cache, target: /root/.composer/cache }
+      - { type: bind, source: ./app, target: /app }
     working_dir: /app
   mariadb:
     ports:
-      - "33306:3306"
+      - "3306:3306"
 volumes:
   composer_cache:
     driver: local
