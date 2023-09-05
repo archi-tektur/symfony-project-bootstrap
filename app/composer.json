@@ -1,6 +1,6 @@
 {
-    "version": "1.0.4",
-    "description": "",
+    "version": "2.0.0",
+    "description": "Symfony project bootstrap",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -13,14 +13,13 @@
         "doctrine/doctrine-bundle": "^2.6",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
-        "sensio/framework-extra-bundle": "^6.2",
-        "symfony/dotenv": "6.1.*",
+        "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
-        "symfony/framework-bundle": "6.1.*",
-        "symfony/http-client": "6.1.*",
+        "symfony/framework-bundle": "6.3.*",
+        "symfony/http-client": "6.3.*",
         "symfony/monolog-bundle": "^3.8",
-        "symfony/runtime": "6.1.*",
-        "symfony/yaml": "6.1.*"
+        "symfony/runtime": "6.3.*",
+        "symfony/yaml": "6.3.*"
     },
     "config": {
         "allow-plugins": {
@@ -72,8 +71,7 @@
         "run-all-tests": [
             "@run-unit-tests",
             "@run-functional-tests"
-        ],
-        "build": {}
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -81,7 +79,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "6.1.*"
+            "require": "6.3.*"
         }
     },
     "require-dev": {
@@ -91,6 +89,6 @@
         "phpstan/phpstan-phpunit": "^1.1",
         "phpstan/phpstan-symfony": "^1.1",
         "phpunit/phpunit": "^9.5",
-        "symfony/phpunit-bridge": "^6.0"
+        "symfony/phpunit-bridge": "6.3.*"
     }
 }

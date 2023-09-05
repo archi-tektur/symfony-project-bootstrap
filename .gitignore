@@ -1,52 +1,27 @@
 #############################
-### System
-#############################
-*.bak
-*.swp
-*.tmp
-*~
-.DS_Store
-desktop.ini
-thumbs.db
-
-#############################
 ### IDE
 #############################
+# PhpStorm
 /.idea
 
 #############################
 ### Docker
 #############################
-/docker-compose.override.yml
+# Currently used profile
+/compose.override.yaml
 
 #############################
-### Version Bumper
+### PHP / Symfony
 #############################
-.semver/node_modules
-.semver/husky
-npm-debug.log
-
-#############################
-### Database
-#############################
-.database
-!/.database/.gitkeep
-
-#############################
-### PHP
-#############################
+# Vendors
 app/vendor
+
+# Cache and logs
 app/var
 
-#############################
-### Tools
-#############################
+# Code quality tools cache files
 /app/.phpunit.result.cache
 /app/.php-cs-fixer.cache
 
-#############################
-### Application
-#############################
-/app/log/*
-!app/var/log/.gitkeep
-
+# Front-end bundles
+app/public/bundles

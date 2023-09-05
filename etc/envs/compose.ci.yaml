@@ -3,7 +3,7 @@ services:
     environment:
       PHP_OPCACHE_ENABLE: "false"
     ports:
-      - "8080"
+      - "80"
   mariadb:
     # Functional tests will need working database
     ports:
