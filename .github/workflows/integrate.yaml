@@ -18,17 +18,17 @@ jobs:
             - { name: "Load CI env configuration", run: "ln -s ./etc/envs/compose.ci.yaml . && mv compose.ci.yaml compose.override.yaml" }
             - { name: "Build app docker image", run: "docker build -t ${{ env.PACKAGE_NAME }}:${{ env.PACKAGE_VERSION }} ." }
 
-            - { name: "Pull up docker setup", run: "docker-compose up --detach" }
+            - { name: "Pull up docker setup", run: "docker compose up --detach" }
 
             # linting, code style, static analysis
-            - { name: "Lint Symfony service container", run: "docker-compose exec -T app bin/console lint:container" }
-            - { name: "Lint YAML config files", run: "docker-compose exec -T app bin/console lint:yaml config" }
-            - { name: "Lint PHP source code", run: "docker-compose exec -T app vendor/bin/php-cs-fixer fix --dry-run --using-cache no --allow-risky=yes" }
-            - { name: "Run code static analysis", run: "docker-compose exec -T app vendor/bin/phpstan analyse" }
+            - { name: "Lint Symfony service container", run: "docker compose exec -T app bin/console lint:container" }
+            - { name: "Lint YAML config files", run: "docker compose exec -T app bin/console lint:yaml config" }
+            - { name: "Lint PHP source code", run: "docker compose exec -T app vendor/bin/php-cs-fixer fix --dry-run --using-cache no --allow-risky=yes" }
+            - { name: "Run code static analysis", run: "docker compose exec -T app vendor/bin/phpstan analyse" }
 
             # unit tests
-            - { name: "Unit tests", run: "docker-compose exec -T app php bin/phpunit --do-not-cache-result --testsuite unit" }
+            - { name: "Unit tests", run: "docker compose exec -T app php bin/phpunit --do-not-cache-result --testsuite unit" }
 
             # functional tests
-            - { name: "Functional tests", run: "docker-compose exec -T app php bin/phpunit --do-not-cache-result --testsuite functional" }
+            - { name: "Functional tests", run: "docker compose exec -T app php bin/phpunit --do-not-cache-result --testsuite functional" }
 
