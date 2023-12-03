@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## 2.0.0 (2023-19-05)
+## 3.0.0 (2023-12-04)
+- upgrade php caddy image to version 3.0.0
+- upgrade php to 8.3
+- change mariadb to mysql as database source
+- update repository owner
+
+## 2.0.0 (2023-09-05)
 - upgrade symfony to version 6.3
 - upgrade php caddy image to version 2.2.0
 - changed file names and the way how environment is configured

@@ -4,7 +4,7 @@ on:
     paths: [ "**", "!**.md" ]
 env:
   PACKAGE_NAME: "ghcr.io/oskarbarcz/symfony-project-bootstrap"
-  PACKAGE_VERSION: "2.0.0"
+  PACKAGE_VERSION: "3.0.0"
 jobs:
   integrate:
     runs-on: ubuntu-22.04
