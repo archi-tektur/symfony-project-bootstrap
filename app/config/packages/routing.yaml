@@ -1,7 +1,7 @@
 framework:
-    router:
-        utf8: true
+  router:
+    utf8: true
 when@prod:
-    framework:
-        router:
-            strict_requirements: null
+  framework:
+    router:
+      strict_requirements: null
