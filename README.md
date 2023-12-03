@@ -1,7 +1,7 @@
 # Symfony Bootstrap
 
-Modern Symfony (PHP) project template created in order to follow 12-factor-app principles. Great starter for small,
-medium and large projects.
+Modern Symfony (PHP) project template created in order to follow [12-Factor-App](https://12factor.net) principles. Great
+starter for small, medium and large projects.
 
 ## Motivation
 
@@ -12,8 +12,10 @@ recommends using Docker is far from perfect, hence I created this bootstrap.
 
 ## PHP, Symfony and the database
 
-This project is using PHP in version **8.1.\** and Symfony framework with version **^6.1**. In the future, I plan to
-update this repository to match next PHP and Symfony versions. Also, the MariaDB 10.6 is used.
+This project is using PHP in version **8.3** and Symfony framework with version **^6.3**.  Also, the MySQL in version
+**8.2.0** is used.
+
+I update this repository regularly to match next PHP and Symfony versions.
 
 ## Required tools
 
