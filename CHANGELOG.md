@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 - upgrade php to 8.3
 - change mariadb to mysql as database source
 - update repository owner
+- add editorconfig file
 
 ## 2.0.0 (2023-09-05)
 - upgrade symfony to version 6.3
