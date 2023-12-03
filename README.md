@@ -93,15 +93,15 @@ docker compose down --remove-orphans
 
 ### Custom PHP image
 
-In the main Dockerfile I used [caddy-php](https://github.com/archi-tektur/caddy-php-image): my own high-performance PHP
+In the main Dockerfile I used [caddy-php](https://github.com/at-cloud-pro/caddy-php-image): my own high-performance PHP
 image that uses Caddy as a runner and php-fpm as a daemon.
 
 ```dockerfile
-FROM ghcr.io/archi-tektur/caddy-php:2.2.0 AS app
+FROM ghcr.io/at-cloud-pro/caddy-php:3.0.0 AS app
 ```
 
 You're free to change it to any image and configuration you'd like. You may read
-[here](https://github.com/archi-tektur/caddy-php-image/README.md) what's bundled inside my image and create your own
+[here](https://github.com/at-cloud-pro/caddy-php-image/README.md) what's bundled inside my image and create your own
 with my approach as a guidelines.
 
 ### Application logs
@@ -117,7 +117,7 @@ tests.
 
 #### Unit
 Use the command below to run unit tests. Initially this project contains
-[one test](https://github.com/archi-tektur/symfony-bootstrap/app/tests/NullTest.php) with one assertion
+[one test](https://github.com/oskarbarcz/symfony-bootstrap/app/tests/NullTest.php) with one assertion
 (NullTest pattern).
 
 ```
