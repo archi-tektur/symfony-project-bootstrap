@@ -19,7 +19,7 @@ services:
       # Application
       APP_ENV: "dev"
       APP_SECRET: "a9806d99cd5c1503d8af30c963c9411f"
-      DATABASE_URL: "mysql://user:password@mariadb:3306/symfony-bootstrap"
+      DATABASE_URL: "mysql://user:password@database:3306/symfony-bootstrap"
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
     ports:
@@ -28,7 +28,7 @@ services:
       - { type: volume, source: composer_cache, target: /root/.composer/cache }
       - { type: bind, source: ./app, target: /app }
     working_dir: /app
-  mariadb:
+  database:
     ports:
       - "3306:3306"
 volumes:
