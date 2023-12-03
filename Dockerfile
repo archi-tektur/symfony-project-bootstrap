@@ -1,4 +1,4 @@
-FROM ghcr.io/archi-tektur/caddy-php:2.2.0 AS app
+FROM ghcr.io/at-cloud-pro/caddy-php:3.0.0 AS app
 
 ENV VERSION="2.0.0"
 
