@@ -1,4 +1,4 @@
-# Symfony Bootstrap
+# Symfony project bootstrap
 
 Modern Symfony (PHP) project template created in order to follow [12-Factor-App](https://12factor.net) principles. Great
 starter for small, medium and large projects.
