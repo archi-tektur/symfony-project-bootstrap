@@ -1,7 +1,7 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
-        server_version: 'mariadb-10.6.0'
+        server_version: '8.2.0'
         charset: 'utf8mb4'
     orm:
         auto_generate_proxy_classes: true

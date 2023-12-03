@@ -4,13 +4,13 @@ services:
       context: .
       dockerfile: Dockerfile
       target: app
-    image: ghcr.io/archi-tektur/symfony-project-bootstrap:app-${VERSION:-2.0.0}
+    image: ghcr.io/oskarbarcz/symfony-project-bootstrap:app-${VERSION:-2.0.0}
     environment:
       APP_ENV: "dev"
       APP_SECRET: "a9806d99cd5c1503d8af30c963c9411f"
-      DATABASE_URL: "mysql://user:password@mariadb:3306/symfony-bootstrap"
-  mariadb:
-    image: 'mariadb:10.6'
+      DATABASE_URL: "mysql://user:password@database:3306/symfony-bootstrap"
+  database:
+    image: 'mysql:8.2.0'
     environment:
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_DATABASE: "symfony-bootstrap"
